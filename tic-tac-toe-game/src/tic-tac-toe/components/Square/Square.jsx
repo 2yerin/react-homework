@@ -1,4 +1,10 @@
 import S from './Square.module.css';
+import {func, node} from 'prop-types';
+
+Square.propTypes = {
+  children: node,
+  gamePlay: func,
+};
 
 function Square({children, gamePlay, style}){
 

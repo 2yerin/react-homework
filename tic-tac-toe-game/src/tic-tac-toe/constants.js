@@ -1,11 +1,11 @@
 export const PLAYER = {
-  A:'☂️',
-  B:'🌧️',
+  A:'👩‍🚀',
+  B:'👾',
 };
 
 export const GAME_BOARD = Array(9).fill(null);
 
-export const WINNERS_COLOR = 'purple';
+export const WINNERS_COLOR = 'silver';
 
 const WINNER_CONDITIONS = [
   [0,1,2],
