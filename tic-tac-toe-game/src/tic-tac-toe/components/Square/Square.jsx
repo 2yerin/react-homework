@@ -1,12 +1,8 @@
 import S from './Square.module.css';
 
-function Square(){
+function Square({children, gamePlay}){
   return (
-    <>
-    <button className={S.Square} disabled>🟨</button>
-    <button className={S.Square} disabled>⚫️</button>
-    <button className={S.Square}></button>
-    </>
+    <button className={S.Square} onClick={gamePlay}>{children}</button>
   );
 }
 
