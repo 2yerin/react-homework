@@ -9,19 +9,21 @@ function Squares(){
   const handleGameFlow = (selectedIndex) => () => {
     setGameBoard((prevGameBoard)=>{
       const nextGameBoard = prevGameBoard.map((currentValue, index)=>{
-        return index===selectedIndex ? PLAYER.A : currentValue;
+        return index===selectedIndex ? currentPlayer : currentValue;
       });
 
       return nextGameBoard;
     });
-    }
+  }
 
+  const currentStage = gameBoard.filter(Boolean).length;
+  const currentPlayer = currentStage % 2 === 0 ? PLAYER.A : PLAYER.B
 
   return (
     <div className={S.Squares}>{
       gameBoard.map((currentValue, index)=>{
         return (
-          <Square key = {index} gamePlay = {handleGameFlow(index)}>{currentValue}</Square>
+          <Square key={index} gamePlay={handleGameFlow(index)}>{currentValue}</Square>
         )})}
     </div>
   );
